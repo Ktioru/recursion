@@ -1,4 +1,4 @@
-let fibonacci = []
+let fibonacci = [0]
 
 function getFibonacci(number) {
     for (let c = 0; c <= number; c++) {
@@ -11,5 +11,14 @@ function getFibonacci(number) {
     return fibonacci
 }
 
+function getFibonacciRec(number, fibonacci = [0, 1]) {
+    
+    if(fibonacci[fibonacci.length - 1] >= number + fibonacci[fibonacci.length - 3]) {
+        return fibonacci
+    } else {
+        fibonacci.push(fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2])
+        return getFibonacciRec(number, fibonacci)
+    }
+}
 
-console.log(getFibonacci(8))
+console.log(getFibonacciRec(13))
