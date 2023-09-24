@@ -3,16 +3,16 @@ function mergeSort(array) {
         return array;
       }
     
-      // Split the array into two halves
+      
       const middle = Math.floor(array.length / 2);
       const left = array.slice(0, middle);
       const right = array.slice(middle);
     
-      // Recursively sort each half
+      
       const leftSorted = mergeSort(left);
       const rightSorted = mergeSort(right);
     
-      // Merge the sorted halves
+      
       return merge(leftSorted, rightSorted);
     
 }
@@ -37,4 +37,3 @@ function merge(left, right) {
 const unsortedArray = [64, 34, 25, 12, 22, 11, 90];
 const sortedArray = mergeSort(unsortedArray);
 console.log(sortedArray);
-
